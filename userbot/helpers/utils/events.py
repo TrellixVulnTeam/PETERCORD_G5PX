@@ -13,9 +13,9 @@ async def reply_id(event):
     return reply_to_id
 
 
-async def get_user_from_event(event, catevent=None, secondgroup=None):
-    if catevent is None:
-        catevent = event
+async def get_user_from_event(event, petercordevent=None, secondgroup=None):
+    if petercordevent is None:
+        petercordevent = event
     if secondgroup:
         args = event.pattern_match.group(2).split(" ", 1)
     else:
