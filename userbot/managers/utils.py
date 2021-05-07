@@ -7,7 +7,6 @@ import requests
 from ..Config import Config
 
 
-
 # https://docs.telethon.dev/en/latest/misc/changelog.html#breaking-changes
 async def edit_or_reply(
     event,
