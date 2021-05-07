@@ -20,7 +20,7 @@ USERID = bot.uid if Config.OWNER_ID == 0 else Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME
 AUTONAME = Config.AUTONAME
 DEFAULT_BIO = Config.DEFAULT_BIO
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "petercord"
 BOT_USERNAME = Config.TG_BOT_USERNAME
 # mention user
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
@@ -62,7 +62,7 @@ else:
 cat_users = [bot.uid]
 if Config.SUDO_USERS:
     for user in Config.SUDO_USERS:
-        cat_users.append(user)
+        petercord_users.append(user)
 
 
 # ================================================
@@ -82,11 +82,11 @@ if Config.THUMB_IMAGE is not None:
             LOGS.info(str(e))
 
 
-def check(cat):
-    if "/start" in cat:
+def check(petercord):
+    if "/start" in petercord:
         return True
     try:
-        hi = re.search(cat.lower(), "(a|b|c|d)", flags=re.IGNORECASE)
+        hi = re.search(petercord.lower(), "(a|b|c|d)", flags=re.IGNORECASE)
     except Exception:
         hi = False
     return bool(hi)
@@ -103,15 +103,7 @@ def set_key(dictionary, key, value):
         dictionary[key] = [dictionary[key], value]
 
 
-# UniBorg Telegram UseRBot
-# Copyright (C) 2020 @UniBorg
-# This code is licensed under
-# the "you can't use this for anything - public or private,
-# unless you know the two prime factors to the number below" license
-# 543935563961418342898620676239017231876605452284544942043082635399903451854594062955
-# വിവരണം അടിച്ചുമാറ്റിക്കൊണ്ട് പോകുന്നവർ
-# ക്രെഡിറ്റ് വെച്ചാൽ സന്തോഷമേ ഉള്ളു..!
-# uniborg
+
 
 
 def check_data_base_heal_th():
@@ -134,7 +126,7 @@ def check_data_base_heal_th():
     return is_database_working, output
 
 
-async def catalive():
+async def petercordalive():
     _, check_sgnirts = check_data_base_heal_th()
     sudo = "Enabled" if Config.SUDO_USERS else "Disabled"
     uptime = await get_readable_time((time.time() - StartTime))
@@ -176,7 +168,7 @@ async def catalive():
         dyno = f"{AppHours}h {AppMinutes}m/{hours}h {minutes}m"
     except Exception as e:
         dyno = e
-    return f"Catuserbot Stats\
+    return f"PETERCORD-USERBOT Stats\
                  \n\nDatabase : {check_sgnirts}\
                   \nSudo : {sudo}\
                   \nUptime : {uptime}\
