@@ -1,5 +1,5 @@
 from . import fonts
-from . import memeshelper as catmemes
+from . import memeshelper as petercordmemes
 from .aiohttp_helper import AioHttp
 from .functions import *
 from .memeifyhelpers import *
